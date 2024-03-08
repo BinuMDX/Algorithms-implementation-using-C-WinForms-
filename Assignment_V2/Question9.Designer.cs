@@ -38,6 +38,7 @@
             this.description = new System.Windows.Forms.Label();
             this.mathsText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.totalLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chemText
@@ -129,11 +130,22 @@
             this.label1.TabIndex = 46;
             this.label1.Text = "Maths";
             // 
+            // totalLabel
+            // 
+            this.totalLabel.AutoSize = true;
+            this.totalLabel.Font = new System.Drawing.Font("Bodoni MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLabel.Location = new System.Drawing.Point(494, 121);
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Size = new System.Drawing.Size(44, 20);
+            this.totalLabel.TabIndex = 56;
+            this.totalLabel.Text = "Total";
+            // 
             // Question9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.chemText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.physicsText);
@@ -163,5 +175,6 @@
         private System.Windows.Forms.Label description;
         private System.Windows.Forms.TextBox mathsText;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label totalLabel;
     }
 }

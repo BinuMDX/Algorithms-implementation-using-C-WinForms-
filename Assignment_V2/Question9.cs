@@ -27,13 +27,51 @@ namespace Assignment_V2
 
             if(total > 180)
             {
-                ResultLabel.Text = $"The candidate is eligible for admission";
+                if (maths < 65 || physics < 55 || chemistry < 50)
+                {
+                    totalLabel.ForeColor = Color.FromArgb(0xFF7E00);
+                    totalLabel.Text = $"Total is: {total}";
+                    ResultLabel.Text = $"The candidate is not eligible for admission";
+                }
+                else
+                {
+                    totalLabel.ForeColor = Color.Green;
+                    totalLabel.Text = $"Total is: {total}";
+                    ResultLabel.Text = $"The candidate is eligible for admission";
+                }
             }
             else
             {
+                totalLabel.ForeColor = Color.Red;
+                totalLabel.Text = $"Total is: {total}";
                 ResultLabel.Text = $"The candidate is not eligible for admission";
             }
 
+
+            if(maths < 65)
+            {
+                mathsText.BackColor = Color.Red;
+            }
+            else
+            {
+                mathsText.BackColor = Color.LightGreen;
+            }
+            if (physics < 55)
+            {
+                physicsText.BackColor = Color.Red;
+            }
+            else
+            {
+                physicsText.BackColor = Color.LightGreen;
+            }
+            if (chemistry < 55)
+            {
+                chemText.BackColor = Color.Red;
+            }
+            else
+            {
+                chemText.BackColor = Color.LightGreen;
+            }
         }
 
         private void checkButton_Click(object sender, EventArgs e)
@@ -46,13 +84,53 @@ namespace Assignment_V2
 
             if (total > 180)
             {
-                if(maths >= 55 )
-                MessageBox.Show($"The candidate is eligible for admission", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (maths < 65 || physics < 55 || chemistry < 50)
+                {
+                    totalLabel.ForeColor = Color.FromArgb(0xFF7E00);
+                    totalLabel.Text = $"Total is: {total}";
+                    MessageBox.Show($"The candidate is not eligible for admission");
+
+                }
+                else
+                {
+                    totalLabel.ForeColor = Color.Green;
+                    totalLabel.Text = $"Total is: {total}";
+                    MessageBox.Show($"The candidate is eligible for admission");
+                }
             }
             else
             {
-                MessageBox.Show($"The candidate is not eligible for admission", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                totalLabel.ForeColor = Color.Red;
+                totalLabel.Text = $"Total is: {total}";
+                MessageBox.Show($"The candidate is not eligible for admission");
             }
+
+
+            if (maths < 65)
+            {
+                mathsText.BackColor = Color.Red;
+            }
+            else
+            {
+                mathsText.BackColor = Color.LightGreen;
+            }
+            if (physics < 55)
+            {
+                physicsText.BackColor = Color.Red;
+            }
+            else
+            {
+                physicsText.BackColor = Color.LightGreen;
+            }
+            if (chemistry < 55)
+            {
+                chemText.BackColor = Color.Red;
+            }
+            else
+            {
+                chemText.BackColor = Color.LightGreen;
+            }
+
         }
     }
 }
