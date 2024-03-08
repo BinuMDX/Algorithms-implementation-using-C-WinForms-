@@ -75,5 +75,58 @@ namespace Assignment_V2
 
         }
 
+        private void actualCheck_Click(object sender, EventArgs e)
+        {
+            string name = nameText1.Text;
+            string id = idText1.Text;
+            int unit = Convert.ToInt32(unitText1.Text);
+            double total = 0;
+            double surcharge, netTotal;
+
+            /*The charge are as follow :
+                    Unit                                Charge/unit
+                    upto 199                             @1.20
+                    200 and above but less than 400      @1.50
+                    400 and above but less than 600      @1.80
+                    600 and above                        @2.00 */
+
+            if (unit >= 600)
+            {
+                total = (200 * 1.20) + (200 * 1.50) + (200 * 1.80) + ((unit-600) * 2.00);
+            }
+            else if (unit < 600 && unit >= 400)
+            {
+                total = (200 * 1.20) + (200 * 1.50)+ ((unit-400) * 1.80);
+            }
+            else if (unit < 400 && unit >= 200)
+            {
+                total = (200*1.20)+ ((unit-200) * 1.50);
+            }
+            else
+            {
+                total = unit * 1.20;
+            }
+
+            display1.Text = $"Customer IDNO: {id}\n" +
+                              $"Customer Name: {name}\n" +
+                              $"unit Consumed: {unit}\n" +
+                              $"Amount Charges per unit : {total:F2}\n";
+
+
+            if (total > 400)
+            {
+                surcharge = (total * 15) / 100;
+                netTotal = total + surcharge;
+                display1.Text += $"Surcharge Amount: {surcharge:F2}\n";
+                display1.Text += $"Net Amount Paid By the Customer: {netTotal:F2}";
+            }
+
+            if (total < 100)
+            {
+                total = 100;
+                display1.Text += $"Net Amount Paid By the Customer: {total:F2}";
+            }
+
+        }
     }
 }
